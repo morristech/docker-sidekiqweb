@@ -5,4 +5,7 @@ Sidekiq.configure_client do |config|
 end
 
 require 'sidekiq/web'
-run Sidekiq::Web
+
+map '/sidekiq' do
+  run Sidekiq::Web
+end
